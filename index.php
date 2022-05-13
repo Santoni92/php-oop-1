@@ -4,8 +4,8 @@
         //attributi(variabili d'istanza)
         public $titolo ;
         public $regista;
-        //public $paeseDiProduzione;
         public $visualizzazioni = 0;
+        public $commenti = 0;
 
         //costruttore
         function __construct($titolo,$regista)
@@ -25,5 +25,6 @@
     $film = new Movie('via col vento','Victor Flaming');
 
 
-    echo('Il film ' . $film -> titolo .  'è stato visto ' . $film -> visualizzazioni .  ' volte');   
+    echo('Il film ' . $film -> titolo .  'è stato visto ' . $film -> visualizzazioni .  ' volte'); 
+    echo("Il film $film -> titolo è stato visto  $film -> visualizzazioni volte");
 ?>
