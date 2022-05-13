@@ -6,7 +6,6 @@
         public $regista;
         public $visualizzazioni = 0;
         public $commenti = [];
-        public $numeroDiCommenti = 0;
 
         //costruttore
         function __construct($titolo,$regista)
@@ -23,8 +22,21 @@
 
         public function addComment($comment)
         {
-            $this->commenti = $comment;
-            $this->numeroDiCommenti++;
+            $this->commenti[] = $comment;
+        }
+
+        public function visualizzaCommenti()
+        {
+            if(count( $this->commenti) == 0)
+            {
+                echo('Non vi sono commenti al film');
+            }
+            else{
+                foreach($this->commenti as $commento)
+                {
+                    echo("Commento al film: $commento <br>");
+                }
+            }
         }
     }
 
@@ -38,4 +50,11 @@
 
     $film->incrementViews();
     echo("Il film $film->titolo è stato visto  $film->visualizzazioni volte");
+    echo('<br>');
+
+    $film->addComment('un capolavoro');
+    $film->visualizzaCommenti();
+    echo('<br>');
+    $film->addComment('imperdibile');
+    $film->visualizzaCommenti();
 ?>
