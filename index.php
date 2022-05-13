@@ -41,7 +41,9 @@
     }
 
     //istanzio un oggetto della classe
-    $film = new Movie('via col vento','Victor Flaming');
+    $film = new Movie('Io vi troverò - Taken','Pierre Morel');
+    $primoSequel = new Movie(' Taken - La vendetta ','Olivier Megaton');
+    $secondoSequel = new Movie('Taken 3 - L\'ora della verità','Olivier Megaton');
 
 
     //echo('Il film ' . $film -> titolo .  'è stato visto ' . $film -> visualizzazioni .  ' volte'); 
@@ -57,4 +59,5 @@
     echo('<br>');
     $film->addComment('imperdibile');
     $film->visualizzaCommenti();
+    echo('<br>');
 ?>
